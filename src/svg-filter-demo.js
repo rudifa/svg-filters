@@ -78,8 +78,92 @@ class FilterPenta extends LitElement {
   }
 }
 
+
+class FilterRadgrad extends LitElement {
+
+  render() {
+    return html`
+    <div>
+      <svg width="100%" height="100%" viewbox="0 0 1500 1500">
+        <defs>
+          <radialGradient id = "g0" cx = "50%" cy = "50%" r = "50%" fx = "0%" fy = "50%">
+            <stop stop-color = "black" offset = "0%"/>
+            <stop stop-color = "red" offset = "70%"/>
+            <stop stop-color = "white" offset = "100%"/>
+          </radialGradient>
+          <radialGradient id = "g1" cx = "50%" cy = "50%" r = "50%" fx = "0%" fy = "50%">
+            <stop stop-color = "black" offset = "0%"/>
+            <stop stop-color = "green" offset = "70%"/>
+            <stop stop-color = "white" offset = "100%"/>
+          </radialGradient>
+          <radialGradient id = "g2" cx = "50%" cy = "50%" r = "50%" fx = "0%" fy = "50%">
+            <stop stop-color = "black" offset = "0%"/>
+            <stop stop-color = "blue" offset = "50%"/>
+            <stop stop-color = "white" offset = "100%"/>
+          </radialGradient>
+        </defs>
+
+        <g transform="translate(750,750) rotate(30)">
+          <circle r="500" style="fill:none;stroke:black"/>
+          <g transform="rotate(0)">
+          <path d="M0 0 l 250 -433 250 144.3 0 577.3 -250 144.3 Z" style="stroke:red" fill="url(#g0)"/>
+          </g>
+          <g transform="rotate(120)">
+          <path d="M0 0 l 250 -433 250 144.3 0 577.3 -250 144.3 Z" style="stroke:green" fill="url(#g1)"/>
+          </g>
+          <g transform="rotate(240)">
+          <path d="M0 0 l 250 -433 250 144.3 0 577.3 -250 144.3 Z" style="stroke:blue" fill="url(#g2)"/>
+          </g>  
+        </g>  
+      </svg>
+    </div>
+    `;
+  }
+}
+
+
+class FilterLingrad extends LitElement {
+
+  render() {
+    return html`
+    <div>
+      <svg width="100%" height="100%" viewbox="0 0 1500 1500">
+        <defs>
+          <linearGradient id="lg0" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgb(0,0,0);stop-opacity:1" />
+          <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgb(0,0,0);stop-opacity:1" />
+          <stop offset="100%" style="stop-color:rgb(0,255,0);stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="lg2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgb(0,0,0);stop-opacity:1" />
+          <stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+        </linearGradient>
+        </defs>
+        <g transform="translate(750,750) rotate(30)">
+          <circle r="500" style="fill:none;stroke:black"/>
+          <g transform="rotate(0)">
+          <path d="M0 0 l 250 -433 250 144.3 0 577.3 -250 144.3 Z" style="stroke:red" fill="url(#lg0)"/>
+          </g>
+          <g transform="rotate(120)">
+          <path d="M0 0 l 250 -433 250 144.3 0 577.3 -250 144.3 Z" style="stroke:green" fill="url(#lg1)"/>
+          </g>
+          <g transform="rotate(240)">
+          <path d="M0 0 l 250 -433 250 144.3 0 577.3 -250 144.3 Z" style="stroke:blue" fill="url(#lg2)"/>
+          </g>  
+        </g>  
+      </svg>
+    </div>
+    `;
+  }
+}
+
 customElements.define('filter-blend1', FilterBlend1);
 customElements.define('filter-penta', FilterPenta);
+customElements.define('filter-radgrad', FilterRadgrad);
+customElements.define('filter-lingrad', FilterLingrad);
 
 // returns array of [x,y] absolute coordinates for a pentagon
 function pentagonCoords(r = 1.0) {
