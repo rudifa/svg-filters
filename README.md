@@ -1,6 +1,6 @@
-# HappUI
+# 
 
-[![Glitch Badge](https://badge.glitch.me/gfio-happui)](https://gfio-happui.glitch.me/)
+[![Glitch Badge](https://badge.glitch.me/gfio-happui)](https://glitch.com/~rudifa-svg-filters)
 
 WebComponent ‹Sentir—Comprendre—Connaître›, following Enrique Pardo's
 requirements and concept (described at https://happui.org/app/).
@@ -8,28 +8,31 @@ requirements and concept (described at https://happui.org/app/).
 ## Current status
 
 ```html
-<happ-ui title="First" sentir="0.75" connaitre="0.75" comprendre="0.75"></happ-ui>
-<happ-ui title="Second" sentir="0.75" connaitre="0.75" comprendre="0.75"></happ-ui>
+  <filter-blend1></filter-blend1>
+  <filter-penta></filter-penta>
+  <filter-radgrad></filter-radgrad>
+  <filter-lingrad></filter-lingrad>
+  <filter-lingrad applymask></filter-lingrad>
+
 ```
 
-![Two sample ‹happ-ui› web components](docs/happ-ui-components-sample.png)
-
-## Our \<happ-ui> Web Component
+## Our Web Component
 
 This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
 
 ## Installation
 
 ```bash
-npm i happ-ui
+###
 ```
 
 ## Usage
 
 ```html
-<script type="module">
-  import 'happ-ui/happ-ui.js';
-</script>
+    <script type="module">
+      import "./src/svg-filter-demo.js"
+    </script>
+
 
 <happ-ui title="Color Wheel"
          sentir="0.75" comprendre="0.75" connaitre="0.75"></happ-ui>

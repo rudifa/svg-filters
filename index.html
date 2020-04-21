@@ -1,49 +1,45 @@
 <!doctype html>
 <html lang="en-GB">
 
-<head>
-  <meta charset="utf-8">
-  <style>
-    body { background: #fafafa; }
-    div { width: 100%; height: 100%; }
-    p { font-family: "Lucida Console", Monaco, monospace }
-  </style>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      body { background: #fafafa; }
+      div { width: 100%; height: 100%; }
+      p { font-family: "Lucida Console", Monaco, monospace }
+    </style>
+  </head>
 
-<body>
+  <body>
 
-  <p>filter-blend1</p>
-  <div id="demo">
-    <filter-blend1></filter-blend1>
-  </div>
+    <p>filter-blend1</p>
+    <div id="demo">
+      <filter-blend1></filter-blend1>
+    </div>
 
-  <p>filter-penta</p>
-  <div id="demo">
-    <filter-penta></filter-penta>
-  </div>
+    <p>filter-penta</p>
+    <div id="demo">
+      <filter-penta></filter-penta>
+    </div>
 
-  <p>filter-radgrad</p>
-  <div id="demo">
-    <filter-radgrad></filter-radgrad>
-  </div>
+    <p>filter-radgrad</p>
+    <div id="demo">
+      <filter-radgrad></filter-radgrad>
+    </div>
 
-  <script type="module">
-    import "./src/svg-filter-demo.js"
-  </script>
+    <p>filter-lingrad</p>
+    <div id="demo">
+      <filter-lingrad></filter-lingrad>
+    </div>
 
-<p>filter-lingrad</p>
-<div id="demo">
-  <filter-lingrad></filter-lingrad>
-</div>
+    <p>filter-lingrad applymask</p>
+    <div id="demo">
+      <filter-lingrad applymask></filter-lingrad>
+    </div>
 
-<p>filter-lingrad applymask</p>
-<div id="demo">
-  <filter-lingrad applymask></filter-lingrad>
-</div>
+    <script type="module">
+      import "./src/svg-filter-demo.js"
+    </script>
 
-<script type="module">
-  import "./src/svg-filter-demo.js"
-</script>
-
-</body>
+  </body>
 </html>
