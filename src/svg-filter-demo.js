@@ -45,6 +45,7 @@ class FilterBlend1 extends LitElement {
                 </filter>
             </defs>
             <circle filter="url(#blend-it)" cx="300" cy="300" r="200"/>
+            <rect x="100" y="100" width="400" height="400" style="fill: none; stroke: black"></rect>
 
         </svg>
       </div>

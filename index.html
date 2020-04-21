@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <style>
     body { background: #fafafa; }
-    div { width: 50%; height: 50%; }
+    div { width: 100%; height: 100%; }
     p { font-family: "Lucida Console", Monaco, monospace }
   </style>
 </head>
@@ -19,84 +19,6 @@
 
   <script type="module">
     import "./src/svg-filter-demo.js"
-  </script>
-
-  <div id="demo 1"> 
-    <p>demo 1</p>
-    <!-- this works, also on firefox -->
-    <svg version = "1.1" viewBox = "0 0 200 200">
-      <filter id = "f1" x = "0%" y = "0%" width = "100%" height = "100%">
-        <feImage xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="/>    
-      </filter>
-      <g>
-        <rect x = "0" y = "0" width = "100%" height = "100%" filter = "url(#f1)"/>
-      </g>
-    </svg>
-  </div>
- 
-
-  <div id="demo 2">
-    <p>demo 2</p>
-    <svg version = "1.1" viewBox = "0 0 200 200">
-      <filter id = "f2" x = "0%" y = "0%" width = "100%" height = "100%">
-        <!-- model_tab works, injected manually, converted down below with btoa() -->
-        <feImage xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0ibXlTdmdFbGVtZW50IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTc5LjIiIHdpZHRoPSIxNzkuMiI+CiAgICA8Zz4KICAgICAgPHBhdGggdHJhbnNmb3JtPSJzY2FsZSgwLjEsLTAuMSkgdHJhbnNsYXRlKDAsLTE1MzYpIiBkPSJNMTUzNiAyMjR2NzA0cTAgNDAgLTI4IDY4dC02OCAyOGgtNzA0cS00MCAwIC02OCAyOHQtMjggNjh2NjRxMCA0MCAtMjggNjh0LTY4IDI4aC0zMjBxLTQwIDAgLTY4IC0yOHQtMjggLTY4di05NjBxMCAtNDAgMjggLTY4dDY4IC0yOGgxMjE2cTQwIDAgNjggMjh0MjggNjh6TTE2NjQgOTI4di03MDRxMCAtOTIgLTY2IC0xNTh0LTE1OCAtNjZoLTEyMTZxLTkyIDAgLTE1OCA2NnQtNjYgMTU4djk2MHEwIDkyIDY2IDE1OHQxNTggNjZoMzIwIHE5MiAwIDE1OCAtNjZ0NjYgLTE1OHYtMzJoNjcycTkyIDAgMTU4IC02NnQ2NiAtMTU4eiIgc3R5bGU9IiYjMTA7ICAgIGZpbGw6ICMwM2E5ZjQ7JiMxMDsiLz4KICAgIDwvZz4KICA8L3N2Zz4="/> 
-
-      </filter>
-      <g>
-        <rect x = "0" y = "0" width = "100%" height = "100%" filter = "url(#f2)"/>
-      </g>
-    </svg>
-  </div>
-
-
-  <div id="demo 3">
-    <p>demo 3</p>
-    <svg version = "1.1" viewBox = "0 0 200 200">
-      <filter id = "f3" x = "0%" y = "0%" width = "100%" height = "100%">
-        <!-- model_square works, injected manually, converted on https://codepen.io/jakob-e/pen/doMoML -->
-        <feImage xlink:href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='50' height='50' fill='blue'/%3E%3C/svg%3E"/> 
-
-      </filter>
-      <g>
-        <rect x = "0" y = "0" width = "100%" height = "100%" filter = "url(#f3)"/>
-      </g>
-    </svg>
-  </div>
- 
- 
-  <!-- model_square 
-  <svg width='100' height='100'><rect width='50' height='50' fill='blue'/></svg>
-  -->
-
-  <!-- model_tab 
- -->
-  <a href="https://ourcodeworld.com/articles/read/1072/how-to-convert-a-html-svg-node-to-base64-with-javascript-in-the-browser">source</a>
-  <svg id="mySvgElement" xmlns="http://www.w3.org/2000/svg" height="179.2" width="179.2">
-    <g>
-      <path transform="scale(0.1,-0.1) translate(0,-1536)" d="M1536 224v704q0 40 -28 68t-68 28h-704q-40 0 -68 28t-28 68v64q0 40 -28 68t-68 28h-320q-40 0 -68 -28t-28 -68v-960q0 -40 28 -68t68 -28h1216q40 0 68 28t28 68zM1664 928v-704q0 -92 -66 -158t-158 -66h-1216q-92 0 -158 66t-66 158v960q0 92 66 158t158 66h320 q92 0 158 -66t66 -158v-32h672q92 0 158 -66t66 -158z" style="&#10;    fill: #03a9f4;&#10;"/>
-    </g>
-  </svg>
-
-
-  <script type="module">
-
-    // 1. Keep a DOM reference to the SVG element
-    var SVGDomElement = document.getElementById("mySvgElement");
-
-    // 2. Serialize element into plain SVG
-    var serializedSVG = new XMLSerializer().serializeToString(SVGDomElement);
-
-    console.log(serializedSVG);
-
-    // 3. convert svg to base64
-    var base64Data = window.btoa(serializedSVG);
-    // The generated string will be something like: 
-    // PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdm.........
-
-    // If you want to display it in the browser via URL:
-    console.log("data:image/svg+xml;base64," + base64Data);
-
   </script>
 
 </body>
