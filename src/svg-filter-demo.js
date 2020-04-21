@@ -141,8 +141,12 @@ class FilterLingrad extends LitElement {
           <stop offset="0%" style="stop-color:rgb(0,0,0);stop-opacity:1" />
           <stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
         </linearGradient>
+        <mask id="imask">
+          <circle id="outer" cx="0" cy="0" r="500" fill="white"/>
+        </mask>
+
         </defs>
-        <g transform="translate(750,750) rotate(30)">
+        <g transform="translate(750,750) rotate(30)"  mask="url(#imask)">
           <circle r="500" style="fill:none;stroke:black"/>
           <g transform="rotate(0)">
           <path d="M0 0 l 250 -433 250 144.3 0 577.3 -250 144.3 Z" style="stroke:red" fill="url(#lg0)"/>
