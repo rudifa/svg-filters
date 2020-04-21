@@ -123,6 +123,15 @@ class FilterRadgrad extends LitElement {
 
 
 class FilterLingrad extends LitElement {
+  constructor() {
+    super();
+    this.applymask = false;
+  }
+  static get properties() { 
+    return { 
+      applymask: { type: Boolean }
+    };
+  }
 
   render() {
     return html`
@@ -146,7 +155,7 @@ class FilterLingrad extends LitElement {
         </mask>
 
         </defs>
-        <g transform="translate(750,750) rotate(30)"  mask="url(#imask)">
+        <g transform="translate(750,750) rotate(30)"  mask=${this.applymask ? "url(#imask)" : ""}>
           <circle r="500" style="fill:none;stroke:black"/>
           <g transform="rotate(0)">
           <path d="M0 0 l 250 -433 250 144.3 0 577.3 -250 144.3 Z" style="stroke:red" fill="url(#lg0)"/>
