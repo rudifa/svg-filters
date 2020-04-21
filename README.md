@@ -1,9 +1,9 @@
 # 
 
-[![Glitch Badge](https://badge.glitch.me/gfio-happui)](https://glitch.com/~rudifa-svg-filters)
+[![Glitch Badge]()](https://rudifa-svg-filters.glitch.me)
 
-WebComponent ‹Sentir—Comprendre—Connaître›, following Enrique Pardo's
-requirements and concept (described at https://happui.org/app/).
+
+WebComponents - basic exercises in applications of svg filters.
 
 ## Current status
 
@@ -33,9 +33,6 @@ This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) reco
       import "./src/svg-filter-demo.js"
     </script>
 
-
-<happ-ui title="Color Wheel"
-         sentir="0.75" comprendre="0.75" connaitre="0.75"></happ-ui>
 ```
 
 ## Demoing with Storybook
