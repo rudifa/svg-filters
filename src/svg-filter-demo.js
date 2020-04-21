@@ -19,7 +19,7 @@ class FilterBlend1 extends LitElement {
   render() {
     return html`
       <div>
-        <svg width="100%" height="100%" viewbox="0 0 600 600">
+        <svg width="100%" height="100%" viewbox="0 0 1500 1500">
             <defs>
                 <linearGradient id="wave" x1="0%" x2="100%" y1="0%" y2="0%" 
                     spreadMethod="pad">
@@ -35,17 +35,17 @@ class FilterBlend1 extends LitElement {
                     <stop offset="50%"  stop-color="red"/>
                     <stop offset="100%" stop-color="red" />
                 </linearGradient>
-                <rect id="wave-rect" x="0" y="0" width="400" height="400" fill="url(#wave)"/>
-                <rect id="ry-rect" x="0" y="0" width="400" height="400" fill="url(#red-yellow)"/>
+                <rect id="wave-rect" x="0" y="0" width="1000" height="1000" fill="url(#wave)"/>
+                <rect id="ry-rect" x="0" y="0" width="1000" height="1000" fill="url(#red-yellow)"/>
                 <filter id="blend-it" x="0%" y="0%" width="100%" height="100%">
-                    <feImage xlink:href="#wave-rect" result="myWave" x="100" y="100"/>
-                    <feImage xlink:href="#ry-rect" result="myRY"  x="100" y="100"/>
+                    <feImage xlink:href="#wave-rect" result="myWave" x="250" y="250"/>
+                    <feImage xlink:href="#ry-rect" result="myRY"  x="250" y="250"/>
                     <feBlend in="myWave" in2="myRY" mode="multiply" result="blendedGrad"/>
                     <feComposite in="blendedGrad" in2="SourceGraphic" operator="in"/>
                 </filter>
             </defs>
-            <circle filter="url(#blend-it)" cx="300" cy="300" r="200"/>
-            <rect x="100" y="100" width="400" height="400" style="fill: none; stroke: black"></rect>
+            <circle filter="url(#blend-it)" cx="750" cy="750" r="500"/>
+            <rect x="250" y="250" width="1000" height="1000" style="fill: none; stroke: black"></rect>
 
         </svg>
       </div>
